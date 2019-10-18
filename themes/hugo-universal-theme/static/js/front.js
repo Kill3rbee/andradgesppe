@@ -19,13 +19,12 @@ $(function () {
   animations()
   counters()
   demo()
-  contactFormAjax()
+  contactForm()
 })
 
 // Ajax contact
-function contactFormAjax () {
-  var form = $('.contact-form-ajax')
-  if (typeof form === 'undefined') return false
+function contactForm () {
+  var form = $('.contact-form')
   form.submit(function () {
     $this = $(this)
     $.post($(this).attr('action'),
@@ -222,9 +221,7 @@ function counters () {
 function pictureZoom () {
   $('.product .image, .post .image, .photostream div').each(function () {
     var imgHeight = $(this).find('img').height()
-    if (imgHeight) {
-      $(this).height(imgHeight)
-    }
+    $(this).height(imgHeight)
   })
 }
 
