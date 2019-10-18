@@ -8,6 +8,7 @@ defaultContentLanguage = "en"
 disqusShortname = "graysheepsecurity-com"
 relativeurls = true
 enableEmoji = true
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 GoogleAnalytics = "UA-129199947-1"
 
