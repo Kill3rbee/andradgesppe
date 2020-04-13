@@ -16,7 +16,7 @@ Simba Mutoti <a href='../simba-m'><button type="button" class="btn btn-primary">
 
 <div class="col-sm-8">
 
-<p>I am a Security, Privacy and Risk professional for 15+ yrs providing expertise and analysis to help enhance organizations' security posture and to mitigate risk. As such I use all tenets of Data Science(e.g Machine Learning, Artificial Intelligence and Data Analytics) for vulnerability remediation prioritization and build actionable insight from that data to move organization to a true SecDevOps for operational efficiency. I founded Andradge in 2016 to branch out into independent consultancy projects. Please do check out my <a href='../simba-m'>full profile</a>.
+<p>I am a Security, Privacy and Risk professional for 15+ yrs providing expertise and analysis to help enhance organizations' security posture and to mitigate risk. As such I use all tenets of Data Science(e.g Machine Learning, Artificial Intelligence and Data Analytics) for vulnerability remediation prioritization and build actionable insight from that data to move organization to a true SecDevOps for operational efficiency. I founded Andradge SPPE in 2016 to branch out into independent consultancy projects. Please do check out my <a href='../simba-m'>full profile</a>.
 
 <!--
 <p>My published works and research datasets are thoroughly documented on my ORCID profile: <a href="https://orcid.org/0000-0002-3039-6849" target="orcid.widget" rel="noopener noreferrer" style="vertical-align:top;"><img src="../img/orcid_16x16.png" style="width:1em;" alt="ORCID iD icon">orcid.org/0000-0002-3039-6849</a></p> -->
