@@ -107,7 +107,7 @@ paginate = 10
     # - click the confirm link in the email from www.formspree.io
     # - yu're done. Happy mailing!
     #
-    # Enable the contact form by entering your Formspree.io email
+    # Enable the contact form by entering your Formspree.io email
     email = "info@andradge.com"
 
     about_us = "<p>Andradge SPPE (Security & Privacy Prioritization Experts) provides operational best practices and vulnerability remediation prioritization tailored to meet your organization GRC (Governance, Risk and Compliance) using all tenets of Data Science(e.g Machine Learning,  Artificial Intelligence and Data Analytics). We build actionable insight from your data to move your organization towards GRC and operational efficiency based in Dallas, TX and Atlanta, GA.</p>"
