@@ -5,4 +5,4 @@
 public/
 Bak/
 *.Rmd
-contents/*.Rmd
+content/*.Rmd
