@@ -6,3 +6,5 @@ public/
 Bak/
 *.Rmd
 content/*.Rmd
+content/blog/*.Rmd
+
