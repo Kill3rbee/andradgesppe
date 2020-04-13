@@ -4,7 +4,7 @@ description = "Consultancy"
 keywords = ["Consultancy"]
 +++
 
-Visible Data provides consultancy services in data science, visualisation and advising on reproducible research and collaborative development practices. We're primarily based in Oxford and would be pleased to discuss potential new projects, please do email us: contact@visibledata.co.uk
+Andradge SPPE(Security & Privacy Prioritization Experts) provides operational best practices and vulnerability remediation prioritization tailored to meet your organization GRC(Governance, Risk and Compliance) using all tenets of Data Science(e.g Machine Learning,  Artificial Intelligence and Data Analytics). We build actionable insight from your data to move your organization towards GRC and operational efficiency. We're based out of Dallas and Atlanta. We would be pleased to discuss potential new projects, please do email us: info@andradge.com
 
 <!--
 <div class="row" style='background-color:#f5f5f5'>
@@ -44,19 +44,13 @@ We're proud to have worked with a wide range of clients on a variety of projects
 <div class="row">
 <center>
 <p>
-<img src="../img/clients/jbi-training_logo.jpg" alt="" width="18%" height="18%" />&nbsp; &nbsp;&nbsp;
-<img src="../img/clients/lynda_logo.png" alt="" width="12%" height="12%" />&nbsp; &nbsp;&nbsp;
-<img src="../img/clients/rss-logo.jpg" alt="" width="18%" height="18%" />&nbsp; &nbsp;&nbsp;
-<img src="../img/clients/sage-publishing-logo.jpg" alt="" width="18%" height="18%" />&nbsp;&nbsp;
-<br>
-<img src="../img/clients/ericsson_logo.png" alt="" width="9%" height="9%" />&nbsp; &nbsp;&nbsp;
-<img src="../img/clients/perspectum-diagnostics-logo.png" alt="" width="12%" height="12%" /> &nbsp; &nbsp;&nbsp;
-<img src="../img/clients/future-games-of-london_logo.png" alt="" width="18%" height="18%" />&nbsp; &nbsp;&nbsp;
-<img src="../img/clients/ttc-group_logo.jpg" alt="" width="18%" height="18%" />&nbsp; &nbsp;&nbsp;
-<br>
-<img src="../img/clients/figshare_logo.png" alt="" width="18%" height="18%"/>&nbsp; &nbsp;&nbsp;&nbsp;
 <img src="../img/clients/linkedin-logo.png" alt="" width="18%" height="18%"/>&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="../img/clients/university-of-oxford.png" alt="" width="9%" height="9%"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../img/clients/backhomefood_logo.png" alt="" width="9%" height="9%"/>&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../img/clients/ericsson_logo.png" alt="" width="9%" height="9%" />&nbsp; &nbsp;&nbsp;
+<br>
+
+<br>
+
 </p>
 <center>
       </div>
