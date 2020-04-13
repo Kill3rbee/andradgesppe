@@ -2,9 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
-public/
-Bak/
-*.Rmd
-content/*.Rmd
-content/blog/*.Rmd
-
+.gitignore
+.gitkeep
+/**/*.Rmd
+config.toml
+andradgesppe.Rproj
+content/
+static/
+themes/
