@@ -7,7 +7,7 @@ Andradge SPPE(Security & Privacy Prioritization Experts) provides operational be
 
 If physical location is important to you, we're very happy to travel to your offices within the USA and work with you on your turf.
 
-<!-- **Visible Data** is all about making data more accessible and reproducibly available, so as to bridge what is often called the "data gap". Data visualisation is only a small part of that, but it's the shiniest part. This site makes use of [reproducibility ratings](/reproducibility-ratings) at the top of all the blogposts to help readers identify and find the author, data and code behind the posts. -->
+ **Andradge** is all about making data more accessible and reproducibly available, so as to bridge what is often called the "data gap". Data visualisation is only a small part of that, but it's the shiniest part. This site makes use of [reproducibility ratings](/reproducibility-ratings) at the top of all the blogposts to help readers identify and find the author, data and code behind the posts.
 
 Simba Mutoti <a href='../simba-m'><button type="button" class="btn btn-primary">Full Profile</button></a>
 

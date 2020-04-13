@@ -3,8 +3,6 @@
 .RData
 .Ruserdata
 .gitignore
-.gitkeep
-/**/*.Rmd
-config.toml
+*.Rmd
 andradgesppe.Rproj
 

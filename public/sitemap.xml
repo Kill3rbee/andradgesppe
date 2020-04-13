@@ -53,22 +53,22 @@
   </url>
   
   <url>
-    <loc>/tags/dataviz/</loc>
-    <lastmod>2019-02-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/categories/dataviz/</loc>
     <lastmod>2019-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/gis/</loc>
+    <loc>/tags/dataviz/</loc>
     <lastmod>2019-02-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>/categories/gis/</loc>
+    <lastmod>2019-02-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/gis/</loc>
     <lastmod>2019-02-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -143,12 +143,12 @@
   </url>
   
   <url>
-    <loc>/tags/workflow/</loc>
+    <loc>/categories/workflow/</loc>
     <lastmod>2018-05-29T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/workflow/</loc>
+    <loc>/tags/workflow/</loc>
     <lastmod>2018-05-29T00:00:00+00:00</lastmod>
   </url>
   
