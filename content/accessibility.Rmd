@@ -23,6 +23,7 @@ Training events will be announced on Meetup.com.
 
 - https://www.meetup.com/cities/us/ga/atlanta/
 - https://www.meetup.com/cities/us/tx/dallas/
+- https://www.meetup.com/cities/us/va/herndon/
 
 Consultancy meetings are hosted either at the same Meetup or other separate arrangements made.
 
@@ -75,11 +76,7 @@ Please do contact us regarding lecture slide content that is not yet accessible 
 
 ### Live coding/code samples
 
-Andradge exclusively uses the RStudio IDE for R coding and Spyder, the Scientific Python Development Environment, is a free integrated development environment (IDE) that is included with Anaconda. Unfortunately, it is widely accepted that RStudio is not compatible with the most widely used screen reader tools.
-
-We will provide explicit confirmation that courses make use of technology that fails to support screen readers on both booking pages and booking confirmation emails.
-
-If you have concerns or questions regarding live coding then please do contact us and we can work together to make adaptations for your needs.
+Andradge exclusively uses the RStudio IDE for R coding and Spyder (Scientific Python Development Environment) - a free integrated development environment (IDE) that is included with Anaconda. It is widely accepted that RStudio is not compatible with the most widely used screen reader tools. We provide explicit confirmation that courses make use of technology that may or may not supports screen readers on both booking pages and booking confirmation emails.  If you have concerns or questions regarding live coding, contact us.  We can work together to make adaptations for your needs. 
 
 <hr>
 

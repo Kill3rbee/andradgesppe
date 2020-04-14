@@ -110,7 +110,7 @@ paginate = 10
     # Enable the contact form by entering your Formspree.io email
     email = "info@andradge.com"
 
-    about_us = "<p>Andradge SPPE (Security & Privacy Prioritization Experts) provides operational best practices and vulnerability remediation prioritization tailored to meet your organization GRC (Governance, Risk and Compliance) using all tenets of Data Science(e.g Machine Learning,  Artificial Intelligence and Data Analytics). We build actionable insight from your data to move your organization towards GRC and operational efficiency based in Dallas, TX and Atlanta, GA.</p>"
+    about_us = "<p>Andradge SPPE(Security & Privacy Prioritization Experts) provides operational best practices and vulnerability remediation prioritization tailored to meet your organization GRC(Governance, Risk and Compliance).  We use all tenets of Data Science including Machine Learning, Artificial Intelligence and Data Analytics. Our team of experts at Andradge build actionable insight from your data to move your organization towards GRC and operational efficiency based in Dallas, TX, Atlanta, GA and McLean, VA.</p>"
     copyright = "Copyright (c) 2016 - 2020, Andradge SPPE all rights reserved."
 
     # Format dates with Go's time formatting
@@ -145,7 +145,7 @@ paginate = 10
 [params.recent_posts]
     enable = true
     title = "Andradge Security & Privacy Prioritization Experts Blog"
-    subtitle = "Aspiringly weekly blog covering Offensive Security Testing & Posture Assessments, Vulnerability Management, Data Protection and Digital Privacy Analysis, Industry & Regulatory Compliance, Security & Privacy Awareness Training, Security Technical Design Engineering & Architecture, Engineering SecDevOps, <a href='about'>read more about us here.</a>"
+    subtitle = "Inspiring weekly blog covering Offensive Security Testing & Posture Assessments, Vulnerability Management, Data Protection and Digital Privacy Analysis, Industry & Regulatory Compliance, Security & Privacy Awareness Training, Security Technical Design Engineering & Architecture, Engineering SecDevOps. <a href='about'>Learn more about us here.</a>"
 
 [params.features]
     enable = true

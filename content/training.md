@@ -14,7 +14,7 @@ Andradge SPPE is passionate about designing and delivering technical training co
 
 <h4 style='margin-top:-10px'>On-Demand Training</h4>
 
-Find our on-demand courses covering R, data science and dataviz on Linkedin Learning and Sage Publishing.
+Find our on-demand courses covering R, data science and data visualization on Linkedin Learning and Sage Publishing.
 
 <p></p>
 <div class='row'>
@@ -44,19 +44,19 @@ Interested in working with us to develop your course catalog? Please email us in
 
 <h4 style='margin-top:-10px'>One-to-one and group training</h4>
 
-<p>Private courses for your team at your company site <i class="fa fa-globe"></i> or our <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="7300 Lone Star Drive Suite C200 Plano, TX 75024">Legacy North <i class="fa fa-map-marker"></i></span> OR <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1389 Peachtree Street Northwest Atlanta, GA 30309">The Boundary <i class="fa fa-map-marker"></i></span></p>
+<p>Private courses for your team at your company site <i class="fa fa-globe"></i> or our <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="7300 Lone Star Drive Suite C200 Plano, TX 75024">Legacy North <i class="fa fa-map-marker"></i></span> OR <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1389 Peachtree Street Northwest Atlanta, GA 30309">The Boundary <i class="fa fa-map-marker"></i></span> OR <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1775 Tysons Blvd, McLean, VA 22102">Modern Workplace in Tysons <i class="fa fa-map-marker"></i></span></p>
 
 <p></p>
 
 
 <p>
   <a class="btn btn-primary" data-toggle="collapse" href="#offsite-locations-group-training" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Training at our Legacy North and The Boundary
+    Training at our Legacy North, The Boundary and Modern Workspace in Tysons
   </a>
 </p>
 <div class="collapse" id="offsite-locations-group-training">
   <div class="card card-body">
-  <p>We have a comfortable training room in our <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="7300 Lone Star Drive Suite C200 Plano, TX 75024">Legacy North <i class="fa fa-map-marker"></i></span> OR <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1389 Peachtree Street Northwest Atlanta, GA 30309">The Boundary <i class="fa fa-map-marker"></i></span> for groups of up to 15 with coffee, snacks and for lunch. All our training courses are BYOD (Bring Your Own Device), and of course we have extension cables and good wifi.</p>
+  <p>We have a comfortable training room in our <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="7300 Lone Star Drive Suite C200 Plano, TX 75024">Legacy North <i class="fa fa-map-marker"></i></span> OR <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1389 Peachtree Street Northwest Atlanta, GA 30309">The Boundary <i class="fa fa-map-marker"></i></span> OR <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1775 Tysons Blvd, McLean, VA 22102">Modern Workplace in Tysons <i class="fa fa-map-marker"></i></span> for groups of up to 15 with coffee, snacks and for lunch. All our training courses are BYOD (Bring Your Own Device), and of course we have extension cables and good wifi.</p>
   <center>
   <a href="../training_private_offsite-locations" class="btn btn-success" role="button">Book now</a>
   </center>
@@ -83,7 +83,7 @@ Interested in working with us to develop your course catalog? Please email us in
 <hr>
 
 <p>Public training courses in 
-our <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="7300 Lone Star Drive Suite C200 Plano, TX 75024">Legacy North <i class="fa fa-map-marker"></i></span> and <span data-toggle="tooltip" style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1389 Peachtree Street Northwest Atlanta, GA 30309">The Boundary <i class="fa fa-map-marker"></i></span>.</p>
+our <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="7300 Lone Star Drive Suite C200 Plano, TX 75024">Legacy North <i class="fa fa-map-marker"></i></span> , <span data-toggle="tooltip" style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1389 Peachtree Street Northwest Atlanta, GA 30309">The Boundary <i class="fa fa-map-marker"></i></span> and <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1775 Tysons Blvd, McLean, VA 22102">Modern Workplace in Tysons <i class="fa fa-map-marker"></i></span>.</p>
 
 <p></p>
 
@@ -101,18 +101,17 @@ our <span data-toggle="tooltip"  style="text-decoration:underline;text-decoratio
 
 <p>
   <a class="btn btn-primary" data-toggle="collapse" href="#public_offsite-locations" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Public courses in Atlanta
+    Public courses in Atlanta or McLean
   </a>
 </p>
 <div class="collapse" id="public_offsite-locations">
   <div class="card card-body">
-  <p>We run regular public courses from our comfortable training room in <span data-toggle="tooltip" style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1389 Peachtree Street Northwest Atlanta, GA 30309">The Boundary <i class="fa fa-map-marker"></i></span> for groups of up to 15 with coffee, snacks and lunch. All our training courses are BYOD (Bring Your Own Device), and of course we have extension cables and good wifi.</p>
+  <p>We run regular public courses from our comfortable training room in <span data-toggle="tooltip" style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1389 Peachtree Street Northwest Atlanta, GA 30309">The Boundary <i class="fa fa-map-marker"></i></span> OR <span data-toggle="tooltip"  style="text-decoration:underline;text-decoration-style:dotted;color:#337ab7" data-placement="top" title="1775 Tysons Blvd, McLean, VA 22102">Modern Workplace in Tysons <i class="fa fa-map-marker"></i></span> for groups of up to 15 with coffee, snacks and lunch. All our training courses are BYOD (Bring Your Own Device), and of course we have extension cables and good wifi.</p>
   <center>
   <a href="../training_public_offsite-locations" class="btn btn-success" role="button">Book now</a>
   </center>
   </div>
 </div>
-
 
 </div>
 

@@ -3,9 +3,11 @@ title = "About"
 description = "About"
 +++
 
-Andradge SPPE(Security & Privacy Prioritization Experts) provides operational best practices and vulnerability remediation prioritization tailored to meet your organization GRC(Governance, Risk and Compliance) using all tenets of Data Science(e.g Machine Learning,  Artificial Intelligence and Data Analytics). We build actionable insight from your data to move your organization towards GRC and operational efficiency. Andradge also has a blog where our team share stories about their work, datasets and security research that interest them. If you'd like to get in touch the best way to do that is by email: info@andradge.com.
+Andradge SPPE(Security & Privacy Prioritization Experts) provides operational best practices and vulnerability remediation prioritization tailored to meet your organization GRC(Governance, Risk and Compliance).  We use all tenets of Data Science including Machine Learning, Artificial Intelligence and Data Analytics. Our team of experts at Andradge build actionable insight from your data to move your organization towards GRC and operational efficiency.
 
-If physical location is important to you, we're very happy to travel to your offices within the USA and work with you on your turf.
+Our team of experts share stories about their work, datasets and security research of interest on our blog. 
+
+In our offices or yours, we are very happy to travel to your offices to work directly with your teams.  Ready to get started, contact us directly at info@andradge.com.
 
  **Andradge** is all about making data more accessible and reproducibly available, so as to bridge what is often called the "data gap". Data visualisation is only a small part of that, but it's the shiniest part. This site makes use of [reproducibility ratings](/reproducibility-ratings) at the top of all the blogposts to help readers identify and find the author, data and code behind the posts.
 
