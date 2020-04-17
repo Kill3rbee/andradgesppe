@@ -6,71 +6,26 @@
     <description>Recent content in Categories on Andradge SPPE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Feb 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>data scraping</title>
-      <link>/categories/data-scraping/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      <title>exploratory analysis</title>
+      <link>/categories/exploratory-analysis/</link>
+      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/categories/data-scraping/</guid>
+      <guid>/categories/exploratory-analysis/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
+      <title>visualization</title>
+      <link>/categories/visualization/</link>
+      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
       
-      <guid>/categories/r/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dataviz</title>
-      <link>/categories/dataviz/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/dataviz/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>GIS</title>
-      <link>/categories/gis/</link>
-      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/gis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>meta</title>
-      <link>/categories/meta/</link>
-      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/meta/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>workflow</title>
-      <link>/categories/workflow/</link>
-      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/workflow/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>reproducibility</title>
-      <link>/categories/reproducibility/</link>
-      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/reproducibility/</guid>
+      <guid>/categories/visualization/</guid>
       <description></description>
     </item>
     
