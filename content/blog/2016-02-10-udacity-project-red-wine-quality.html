@@ -21,8 +21,8 @@ banner: img/blog-images/header-images/2016-02-10_udacity-project-red-wine-qualit
 
 <div id="analysis" class="section level1">
 <h1>Analysis</h1>
-<p>The scope of this analysis is to understand which chemical properties influence the quality of Red wine.The following <a href="https://www.google.com/url?q=https%3A%2F%2Fs3.amazonaws.com%2Fudacity-hosted-downloads%2Fud651%2FwineQualityReds.csv&amp;sa=D&amp;sntz=1&amp;usg=AFQjCNFbtvciXJWwSbQuwE2Br_pH9JquAg">data set</a> was utilized in this analysis.</p>
-<p>This tidy data set contains 1,599 red wines with 11 variables on the chemical properties of the wine.</p>
+<p>The scope of this analysis is to understand which chemical properties influence the quality of Red wine.The following <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" target="_blank">data set</a> was utilized in this analysis.
+This tidy data set contains 1,599 red wines with 11 variables on the chemical properties of the wine.</p>
 <div id="load-the-data-and-required-libraries" class="section level3">
 <h3>Load the Data and required Libraries</h3>
 <pre class="r"><code>library(ggplot2)
@@ -33,7 +33,7 @@ library(dplyr)
 library(data.table)
 
 # Local data csv file
-dataWine &lt;- &quot;/home/domtria/Documents/DataScience/Projects/andradgesppe/static/data/wineQualityReds.csv&quot;
+dataWine &lt;- &quot;../../static/data/wineQualityReds.csv&quot;
 
 # Name of unzipped Directory
 dirFile &lt;- &quot;UCI HAR Dataset&quot;
@@ -43,7 +43,7 @@ if (file.exists(dataWine) == FALSE) {
   # Sometimes changing https to http and skip method=&quot;curl&quot; 
   # in the download.file works if having problems with curl
   fileUrl &lt;- &quot;https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityReds.csv&quot;
-  download.file(fileUrl, destfile = &quot;/home/domtria/Documents/DataScience/Projects/andradgesppe/static/data/wineQualityReds.csv&quot;)
+  download.file(fileUrl, destfile = &quot;../../static/data/wineQualityReds.csv&quot;)
 }
 
 redwine &lt;- fread(dataWine)</code></pre>
@@ -239,9 +239,9 @@ The median alcohol content of red wine is 10.20.</p>
 </div>
 <div id="reflection" class="section level1">
 <h1>Reflection</h1>
-<p>The red wine data set contains “1599 instances and 11 attributes of a red variant of the Portuguese”Vinho Verde&quot; wine from around 2009&quot;<em><sup>1<em>. I had no understanding of wine when I started exploring this data set. I started out by doing some research on wine making process. After reading a wine production paper by Linda Bisson. I learned that “wine quality was very much subjective”</em></sup>2</em>.</p>
-<p>That information helped me focus on 11 input variables based on physicochemical tests. “Quality is an output variable based on sensory data”<em>^1</em>. As a first step, I wanted to understand how each of these chemicals interact and correlate with each other. I understood what pH, acidity, alcohol and citric acid were. However, I did not know much about chlorides, density, sulfur dioxide and sulphates. I had to do a lot of reading and research to understand how those chemicals affect quality.</p>
-<p>At some point, as I was looking at the EDADataOptions file. I realized that there was a <a href="https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityInfo.txt">link to a text file</a> which describes the variables and how the data was collected. That text file had descriptions of the attributes and that gave me a better understanding of the variables.</p>
+<p>The red wine data set contains “1599 instances and 11 attributes of a red variant of the Portuguese”Vinho Verde&quot; wine from around 2009“<sup>[<em>1</em>]</sup>. I had no understanding of wine when I started exploring this data set. I started out by doing some research on wine making process. After reading a wine production paper by Linda Bisson. I learned that”wine quality was very much subjective&quot;<sup>[<em>2</em>]</sup>.</p>
+<p>That information helped me focus on 11 input variables based on physicochemical tests. “Quality is an output variable based on sensory data”<sup>[<em>1</em>]</sup>. As a first step, I wanted to understand how each of these chemicals interact and correlate with each other. I understood what pH, acidity, alcohol and citric acid were. However, I did not know much about chlorides, density, sulfur dioxide and sulphates. I had to do a lot of reading and research to understand how those chemicals affect quality.</p>
+<p>At some point, as I was looking at the EDADataOptions file. I realized that there was a <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" target="_blank">link to a text file</a> which describes the variables and how the data was collected. That text file had descriptions of the attributes and that gave me a better understanding of the variables.</p>
 <div id="alcohol-content" class="section level4">
 <h4>Alcohol content</h4>
 <p>I knew alcohol content is an important parameter considered when a buyer purchases any alcoholic product. My analysis tried to unravel relationship of alcohol content with pH values, sulphates, fixed acidity etc and the impact to quality.</p>
@@ -256,7 +256,7 @@ The median alcohol content of red wine is 10.20.</p>
 </div>
 <div id="sulphates-1" class="section level4">
 <h4>Sulphates</h4>
-<p>Based on my research, “Sulphates are anti-inflammatory and anti-depressant. They are needed for making stomach acid and digestive enzymes, so that we can break down the food we eat into useful components. They keep the gut wall healthy, so fragments of food that are too large cannot pass through. If they did, it would lead to the production of antibodies, and to allergies. It is also said to detoxify chemicals in foods and drugs, chemicals made by the body and others from the environment”<em>^3</em>. What was confusing was the text file with the description stated that, sulphates were an additive. Did that mean, they were added after wine was made? Or did these sulphates occur naturally in the soil which grapes were grown in?</p>
+<p>Based on my research, “Sulphates are anti-inflammatory and anti-depressant. They are needed for making stomach acid and digestive enzymes, so that we can break down the food we eat into useful components. They keep the gut wall healthy, so fragments of food that are too large cannot pass through. If they did, it would lead to the production of antibodies, and to allergies. It is also said to detoxify chemicals in foods and drugs, chemicals made by the body and others from the environment”<sup>[<em>3</em>]</sup>. What was confusing was the text file with the description stated that, sulphates were an additive. Did that mean, they were added after wine was made? Or did these sulphates occur naturally in the soil which grapes were grown in?</p>
 </div>
 <div id="sulfur-dioxide-free-and-total" class="section level4">
 <h4>Sulfur dioxide (Free and Total)</h4>
@@ -267,17 +267,17 @@ The median alcohol content of red wine is 10.20.</p>
 <li>The understanding that Red Wine generally is good for you. The analysis proved that higher quality red wine exhibits a higher level of sulphates which are supposed to be good for you.</li>
 <li>Quality of red wine had a negative correlation to pH. This analysis did not answer what deterministic role pH plays for wine quality testing by wine experts.</li>
 <li>For health conscious buyers, red wine with lower and higher alcohol content exhibited higher SO2 content.</li>
-<li>Finally, I quote, “To sum up, judging a wine on just two properties is rather simplistic. There are other factors to consider, for example age”<em>^4</em>.</li>
+<li>Finally, I quote, “To sum up, judging a wine on just two properties is rather simplistic. There are other factors to consider, for example age”<sup>[<em>4</em>]</sup>.</li>
 </ol>
 </div>
 <div id="references" class="section level3">
 <h3>References:</h3>
 <ol style="list-style-type: decimal">
-<li><a href="https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityInfo.txt" class="uri">https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityInfo.txt</a> “Wine Quality Info”</li>
-<li><a href="http://lfbisson.ucdavis.edu/PDF/VEN124%20Section%201.pdf" class="uri">http://lfbisson.ucdavis.edu/PDF/VEN124%20Section%201.pdf</a> “Wine Production”</li>
-<li><a href="http://www.foodsmatter.com/allergy_intolerance/sulphites/articles/sulphates_sulphites.html" class="uri">http://www.foodsmatter.com/allergy_intolerance/sulphites/articles/sulphates_sulphites.html</a> “Food Matters”</li>
-<li><a href="http://fastml.com/predicting-wine-quality/" class="uri">http://fastml.com/predicting-wine-quality/</a> “Predicting wine quality”</li>
-<li><a href="https://rstudio-pubs-static.s3.amazonaws.com/24803_abbae17a5e154b259f6f9225da6dade0.html" class="uri">https://rstudio-pubs-static.s3.amazonaws.com/24803_abbae17a5e154b259f6f9225da6dade0.html</a> “Wine Quality Analysis”</li>
+<li><a href="https://s3.amazonaws.com/udacity-hosted-downloads/ud651/wineQualityInfo.txt" target="_blank">Wine Quality Info</a></li>
+<li><a href="http://lfbisson.ucdavis.edu/PDF/VEN124%20Section%201.pdf" target="_blank">Wine Production</a></li>
+<li><a href="http://www.foodsmatter.com/allergy_intolerance/sulphites/articles/sulphates_sulphites.html" target="_blank">Food Matters</a></li>
+<li><a href="http://fastml.com/predicting-wine-quality/" target="_blank">Predicting wine quality</a></li>
+<li><a href="https://rstudio-pubs-static.s3.amazonaws.com/24803_abbae17a5e154b259f6f9225da6dade0.html" target="_blank">Wine Quality Analysis</a></li>
 </ol>
 </div>
 </div>
