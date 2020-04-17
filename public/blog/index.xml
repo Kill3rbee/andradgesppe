@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Andradge SPPE</title>
+    <link>/blog/</link>
+    <description>Recent content in Blogs on Andradge SPPE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Feb 2016 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Red Wine Quality Exploration</title>
+      <link>/blog/2016/02/10/2016-02-10-udacity-project-red-wine-quality/</link>
+      <pubDate>Wed, 10 Feb 2016 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2016/02/10/2016-02-10-udacity-project-red-wine-quality/</guid>
+      <description>Analysis The scope of this analysis is to understand which chemical properties influence the quality of Red wine.The following data set was utilized in this analysis. This tidy data set contains 1,599 red wines with 11 variables on the chemical properties of the wine.
+Load the Data and required Libraries library(ggplot2) library(grid) library(gridExtra) library(psych) library(dplyr) library(data.table) # Local data csv file dataWine &amp;lt;- &amp;quot;../../static/data/wineQualityReds.csv&amp;quot; # Name of unzipped Directory dirFile &amp;lt;- &amp;quot;UCI HAR Dataset&amp;quot; # Download the dataset (.</description>
+    </item>
+    
+  </channel>
+</rss>

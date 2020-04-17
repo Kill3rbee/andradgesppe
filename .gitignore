@@ -2,7 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
-public/
+content/
+data/
+static/
 .DS_Store
 *.key
 *.Rmd
