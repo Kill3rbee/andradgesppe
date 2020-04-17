@@ -1,0 +1,4 @@
+weight: 3
+name: "Security Engineering"
+icon: "fa fa-cogs"
+description: "At Andradge, we develop requirements for SecDevOps services to design solutions that rapidly integrate security into the client pipeline. We implement and operate SecDevOps solutions at varying levels of maturity from commercial tool integration through custom program builds. Our experts act as SecDevOps security champions for our clients through clear communication of internal and external technical reports, project read-outs and presentations."

@@ -10,7 +10,7 @@ relativeurls = true
 enableEmoji = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
-GoogleAnalytics = "UA-129199947-1"
+GoogleAnalytics = ""
 
 # Define the number of posts per page
 paginate = 10
