@@ -1,0 +1,5 @@
+options(servr.daemon = TRUE,
+        blog.author = "Domtria Simba M",
+        blogdown.ext = ".Rmd",
+        blogdown.subdir = "content/blog/",
+        blogdown.yaml.empty = TRUE)

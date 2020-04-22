@@ -1,0 +1,172 @@
+---
+title: Part 2 Statistical Inference
+author: Domtria Simba M
+date: '2012-02-28'
+slug: part-2-statistical-inference
+categories:
+  - exploratory analysis
+  - statistical inference
+description: In this project we analyze the ToothGrowth data set.
+draft: no
+editor_options:
+  chunk_output_type: console
+tags: 
+  - R
+  - GGPLOT
+banner: img/blog-images/header-images/2012-02-28-part-2-statistical-inference.png
+---
+
+
+
+<div id="introduction" class="section level2">
+<h2><strong>Introduction</strong></h2>
+<p>In this project we analyze the <strong><code>ToothGrowth</code></strong> data set. The data set gives the results of an experiment to determine the effect of two supplements (Vitamin C and Orange Juice), each at three different doses (0.5, 1 or 2 mg) on tooth length in guinea pigs. The <strong><code>len</code></strong> variable gives the tooth growth, the <strong><code>supp</code></strong> variable gives the supplement <strong><code>type</code></strong> and the <strong><code>dose</code></strong> variable gives the supplement dose. We will perform an analysis to compare tooth growth by <strong><code>supp</code></strong> and <strong><code>dose</code></strong>.</p>
+</div>
+<div id="loading-required-libraries" class="section level2">
+<h2><strong>Loading required libraries</strong></h2>
+<pre class="r"><code># Required libraries
+library(datasets)
+library(gridExtra)
+library(ggplot2)
+require(graphics)</code></pre>
+</div>
+<div id="load-data-and-preprocessing" class="section level2">
+<h2><strong>Load Data and Preprocessing</strong></h2>
+<pre class="r"><code>ToothGrowth &lt;- ToothGrowth 
+ToothGrowth$dose &lt;- as.factor(ToothGrowth$dose) # convert to factor</code></pre>
+</div>
+<div id="basic-dataset-summary" class="section level2">
+<h2><strong>Basic dataset summary</strong></h2>
+<pre class="r"><code>str(ToothGrowth)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    60 obs. of  3 variables:
+##  $ len : num  4.2 11.5 7.3 5.8 6.4 10 11.2 11.2 5.2 7 ...
+##  $ supp: Factor w/ 2 levels &quot;OJ&quot;,&quot;VC&quot;: 2 2 2 2 2 2 2 2 2 2 ...
+##  $ dose: Factor w/ 3 levels &quot;0.5&quot;,&quot;1&quot;,&quot;2&quot;: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
+<pre class="r"><code>summary(ToothGrowth)</code></pre>
+<pre><code>##       len        supp     dose   
+##  Min.   : 4.20   OJ:30   0.5:20  
+##  1st Qu.:13.07   VC:30   1  :20  
+##  Median :19.25           2  :20  
+##  Mean   :18.81                   
+##  3rd Qu.:25.27                   
+##  Max.   :33.90</code></pre>
+</div>
+<div id="perform-some-basic-exploratory-data-analyses" class="section level2">
+<h2><strong>Perform some basic exploratory data analyses</strong></h2>
+<pre class="r"><code>plotbox(ToothGrowth)</code></pre>
+<p><img src="/blog/2012-02-28-part-2-statistical-inference_files/figure-html/Boxplots-1.png" width="720" /></p>
+<pre class="r"><code>by( ToothGrowth$len, ToothGrowth$supp,mean)</code></pre>
+<pre><code>## ToothGrowth$supp: OJ
+## [1] 20.66333
+## -------------------------------------------------------- 
+## ToothGrowth$supp: VC
+## [1] 16.96333</code></pre>
+<p>There is an observed difference, but is this difference statistically
+significant? In order to answer this question we will conduct a hypothesis test</p>
+</div>
+<div id="inference" class="section level2">
+<h2><strong>Inference</strong></h2>
+<p>Write the hypotheses for testing if there is a difference between the average tooth growth for guinea pigs given Orange Juice and those given Vitamin C.</p>
+<div id="independent-two-sample-t-test" class="section level3">
+<h3>Independent Two-Sample T-Test</h3>
+<ul>
+<li><span class="math inline">\(H_0: \mu_{OJ} - \mu_{VC}\)</span> = 0 (Means outcome is same between group)</li>
+<li><span class="math inline">\(H_A: \mu_{OJ} - \mu_{VC}\)</span> != 0</li>
+</ul>
+<p><strong>Tooth Growth by Supplement type and Dosage size</strong></p>
+<pre class="r"><code>(lowDosage &lt;- t.test(len ~ supp,ToothGrowth[ToothGrowth$dose == .5, ]))
+paste(&quot;For 0.5mg dosage p-value is&quot;,
+      format(lowDosage$p.value, scientific=FALSE), &quot;:reject NULL hypothesis&quot;, sep=&quot; &quot;)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  len by supp
+## t = 3.1697, df = 14.969, p-value = 0.006359
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  1.719057 8.780943
+## sample estimates:
+## mean in group OJ mean in group VC 
+##            13.23             7.98 
+## 
+## [1] &quot;For 0.5mg dosage p-value is 0.006358607 :reject NULL hypothesis&quot;</code></pre>
+<pre class="r"><code>(medDosage &lt;- t.test(len ~ supp, ToothGrowth[ToothGrowth$dose == 1, ]))
+paste(&quot;For 1mg dosage p-value is&quot;,
+      format(medDosage$p.value, scientific=FALSE), &quot;:reject NULL hypothesis&quot;, sep=&quot; &quot;)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  len by supp
+## t = 4.0328, df = 15.358, p-value = 0.001038
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  2.802148 9.057852
+## sample estimates:
+## mean in group OJ mean in group VC 
+##            22.70            16.77 
+## 
+## [1] &quot;For 1mg dosage p-value is 0.001038376 :reject NULL hypothesis&quot;</code></pre>
+<pre class="r"><code>(highDosage &lt;- t.test(len ~ supp,ToothGrowth[ToothGrowth$dose == 2, ]))
+paste(&quot;For 2mg dosage p-value is&quot;,
+format(highDosage$p.value, scientific=FALSE), &quot;:fail to reject NULL hypothesis&quot;, sep=&quot; &quot;)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  len by supp
+## t = -0.046136, df = 14.04, p-value = 0.9639
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -3.79807  3.63807
+## sample estimates:
+## mean in group OJ mean in group VC 
+##            26.06            26.14 
+## 
+## [1] &quot;For 2mg dosage p-value is 0.9638516 :fail to reject NULL hypothesis&quot;</code></pre>
+</div>
+</div>
+<div id="conclusion" class="section level2">
+<h2><strong>Conclusion</strong></h2>
+<p><strong>Hypothesis tests</strong></p>
+<p><strong>P-value</strong> &lt; 5%: reject <span class="math inline">\(H_0\)</span>.</p>
+<p><strong>P-value</strong> &gt; 5%: fail to reject <span class="math inline">\(H_0\)</span>.</p>
+<p><strong>Dosage of 0.5 mg or 1 mg:</strong>
+Since p-value is low(lower than 5%), we <strong>reject <span class="math inline">\(H_0\)</span></strong>. These data do indeed provide convincing evidence that there is difference between the average length of tooth growth for guinea pigs given Orange Juice and those given Vitamic C. We can conclude that at these dosages Orange Juice promote tooth growth more than Vitamin C.</p>
+<p><strong>Dosage of 2 mg:</strong>
+Since p-value is high(higher than 5%), we <strong>fail to reject <span class="math inline">\(H_0\)</span></strong>. These data do not provide convincing evidence that there is difference between the average length of tooth growth for guinea pigs given Orange Juice and those given Vitamic. We cannot conclude that high dosages of Orange Juice or Vitamin C promote tooth growth.</p>
+<p><strong>Confidence Intervals</strong></p>
+<p>If <strong>95% interval</strong> for <span class="math inline">\(H_0: \mu_{OJ} - \mu_{VC}\)</span> != 0: reject <span class="math inline">\(H_0\)</span>.</p>
+<p>If <strong>95% interval</strong> for <span class="math inline">\(H_0: \mu_{OJ} - \mu_{VC}\)</span> = 0: fail to reject <span class="math inline">\(H_0\)</span>.</p>
+<p><strong>Dosage of 0.5 mg or 1 mg:</strong>
+95% of random samples of 60 guinea pigs given a dosage of 0.5 mg or 1 mg Orange Juice OR Vitamic C will <strong>NOT</strong> yield confidence interval that contain <strong>similar</strong> true average length of tooth growth. We <strong>reject <span class="math inline">\(H_0\)</span></strong> because there is a difference in the means.</p>
+<p><strong>Dosage of 2 mg:</strong>
+95% of random samples of 60 guinea pigs given a dosage of 2mg Orange Juice OR Vitamic C will yield confidence interval that contain <strong>similar</strong> true average length of tooth growth. We <strong>fail to reject <span class="math inline">\(H_0\)</span></strong> because there is no difference in the means.</p>
+</div>
+<div id="appendix" class="section level2">
+<h2><strong>Appendix</strong></h2>
+<div id="conditionsassumptions-for-independent-two-sample-t-test" class="section level3">
+<h3>Conditions/Assumptions for Independent Two-Sample T-Test:</h3>
+<ol style="list-style-type: decimal">
+<li>Independence: <strong>Within groups:</strong> sampled observations must be independent with random sample/assignment. <strong>Between groups:</strong> the two groups must be independent of each other (non-paired)</li>
+<li>Sample size/skew: Each sample size must be at least 30(<em>summary(ToothGrowth)</em>)</li>
+</ol>
+<p><strong>R Code</strong></p>
+<pre class="r"><code>#Function for plotting histogram
+plotbox &lt;- function(box.data){
+  ggplot(box.data, aes(x=factor(dose), y=len,fill=supp))+
+  geom_boxplot()+ facet_grid(.~supp)+ labs(x=&quot;X (binned)&quot;)+
+  theme(axis.text.x=element_text(angle=0, vjust=0.4,hjust=1,face=&quot;bold&quot;,
+                                 color =&quot;black&quot;, size =rel(2)),
+        axis.title.x = element_text(size = rel(1.5),vjust= -.5),
+        axis.text.y = element_text(face=&quot;bold&quot;, color=&quot;black&quot;, size =rel(2)),
+        axis.title.y = element_text(size = rel(1.5), angle = 90,vjust=-.5),
+        strip.text.x = element_text(size=rel(2),face=&quot;bold&quot;),
+        legend.position = &quot;none&quot;, panel.grid.major = element_blank(),
+        panel.background = element_rect(fill = &quot;transparent&quot;),
+        axis.line = element_line(colour = &quot;black&quot;, size=1, linetype = &quot;solid&quot;),
+        plot.title = element_text(vjust= 1,lineheight=.8, face=&quot;bold&quot;,
+                                  color=&quot;#CD0000&quot;, size=16))+
+  scale_x_discrete(&quot;Dosage in mg&quot;) + scale_y_continuous(&quot;Length of Teeth&quot;) + 
+  ggtitle(&quot;Blox Plot of Tooth Length by Supplement and Dosage Size&quot;)
+}</code></pre>
+</div>
+</div>

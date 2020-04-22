@@ -1,0 +1,185 @@
+---
+title: Motor Trend Regression Models
+author: Domtria Simba M
+date: '2016-09-20'
+slug: motor-trend-regression-models
+categories:
+  - exploratory analysis
+  - regression analysis
+description: In this project we perform regression analysis of Motor Trend dataset.
+draft: no
+editor_options:
+  chunk_output_type: console
+tags: 
+  - R
+  - GGPLOT
+banner: img/blog-images/header-images/2016-09-20-motor-trend-regression-models.png
+---
+
+
+
+<div id="introduction" class="section level2">
+<h2><strong>Introduction</strong></h2>
+<p><em><code>Motor Trend</code></em>, is a magazine about the automobile industry. The data was extracted from the 1974 <em><code>Motor Trend</code></em> US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973-74 models). They are particularly interested in the following two questions:</p>
+<ol style="list-style-type: decimal">
+<li>Is an automatic or manual transmission better for <em><code>MPG</code></em>.</li>
+<li>Quantify the <em><code>MPG</code></em> difference between automatic and manual transmissions.</li>
+</ol>
+</div>
+<div id="loading-required-libraries" class="section level2">
+<h2><strong>Loading required libraries</strong></h2>
+<pre class="r"><code># Required libraries
+library(ggplot2)
+library(psych)
+library(MASS)</code></pre>
+</div>
+<div id="load-data-and-preprocessing" class="section level2">
+<h2><strong>Load Data and Preprocessing</strong></h2>
+<pre class="r"><code>data(mtcars)
+mtcars$am &lt;- factor(mtcars$am,labels=c(&#39;Automatic&#39;,&#39;Manual&#39;))</code></pre>
+</div>
+<div id="perform-some-basic-exploratory-data-analyses" class="section level2">
+<h2><strong>Perform some basic exploratory data analyses</strong></h2>
+<p>Let us see how response variable <em><code>MPG</code></em> correlate with all the explanatory variables.</p>
+<pre class="r"><code>pairs.panels(mtcars, main=&quot;Pair Graph of Motor Trend Car Road Tests&quot;)</code></pre>
+<p><img src="/blog/2016-09-20-motor-trend-regression-models_files/figure-html/Pairs-1.png" width="792" /></p>
+<p>The pairs plot show us correlation between different variables. This will be useful once we find out model.</p>
+<pre class="r"><code>plotbox(mtcars)</code></pre>
+<p><img src="/blog/2016-09-20-motor-trend-regression-models_files/figure-html/Boxplots-1.png" width="720" /></p>
+</div>
+<div id="inference" class="section level2">
+<h2><strong>Inference</strong></h2>
+<p>Next, my hypothesis question: Is there a difference between the average <em><code>MPG</code></em> for <em><code>mtcars</code></em> using manual transmission and those using automatic transmission.</p>
+<div id="independent-two-sample-t-test" class="section level3">
+<h3>Independent Two-Sample T-Test</h3>
+<ul>
+<li><span class="math inline">\(H_0: \mu_{Manual} - \mu_{Automatic}\)</span> = 0 (Means outcome is same between group)</li>
+<li><span class="math inline">\(H_A: \mu_{Manual} - \mu_{Automatic}\)</span> != 0</li>
+</ul>
+<p><strong>MPG by Transmission type</strong></p>
+<pre class="r"><code>(mpg &lt;- t.test(mpg ~ am,mtcars))
+paste(&quot;For Manual and Automatic p-value is&quot;,
+      format(mpg$p.value, scientific=FALSE), &quot;:reject NULL hypothesis&quot;, sep=&quot; &quot;)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  mpg by am
+## t = -3.7671, df = 18.332, p-value = 0.001374
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -11.280194  -3.209684
+## sample estimates:
+## mean in group Automatic    mean in group Manual 
+##                17.14737                24.39231 
+## 
+## [1] &quot;For Manual and Automatic p-value is 0.001373638 :reject NULL hypothesis&quot;</code></pre>
+<p> &lt; 5%: <em><code>reject</code></em> <span class="math inline">\(H_0\)</span>.
+ &gt; 5%: <em><code>fail to reject</code></em> <span class="math inline">\(H_0\)</span>.</p>
+<p><strong>MPG for Manual vs Automatic:</strong>
+Since p-value is low(lower than 5%), we <em><code>reject</code></em> <span class="math inline">\(H_0\)</span>. These data do indeed provide convincing evidence that there is difference between the average <em><code>MPG</code></em> for <em><code>mtcars</code></em> using manual transmission and those using automatic transmission. We can conclude that manual transmission has better <em><code>MPG</code></em> more than automatic transmission.</p>
+</div>
+</div>
+<div id="regression-analysis" class="section level2">
+<h2><strong>Regression Analysis</strong></h2>
+<p>In linear regression we estimate two parameter: <span class="math inline">\(\beta_{0}\)</span> and <span class="math inline">\(\beta_{1}\)</span>. So we lose 1 degree of freedom for each parameter as penalty. So k is the number of degrees of freedom. <em><code>AIC</code></em>: k = 2. <em><code>BIC</code></em>: k = <span class="math inline">\(\log_{n}\)</span>.</p>
+<p><em><code>Adjusted</code></em> <span class="math inline">\(R^2\)</span> vs <em><code>P-value</code></em>: </p>
+<ul>
+<li><em><code>p-value</code></em> - when interested in finding out which predictor are statistically significant</li>
+<li><em><code>adjusted</code></em> <span class="math inline">\(R^2\)</span> - when interested in a more reliable predictors.</li>
+</ul>
+<p>I am going to use <em><code>adjusted</code></em> <span class="math inline">\(R^2\)</span> to pick my final model.</p>
+<p><em><code>Backward elimination</code></em> method begins with the full model, drop one variable at a time and record <em><code>adjusted</code></em> <span class="math inline">\(R^2\)</span> of each smaller model. Pick the model with the highest increase in <em><code>adjusted</code></em> <span class="math inline">\(R^2\)</span>.</p>
+<p><em><code>Forward selection</code></em> method starts with single predictor of response vs. each explanatory variable. Add the remaining variables one at a time to existing model and pick the model with highest <em><code>adjusted</code></em> <span class="math inline">\(R^2\)</span>.</p>
+<p>I decided to use <em><code>stepAIC</code></em> function from the <em><code>MASS</code></em> package to perform this analysis because it is automated. However, I will include non-automated linear fit using <em><code>AIC</code></em> and <em><code>BIC</code></em> to see if we get same best/final models.</p>
+<pre class="r"><code>#All Results hidden
+AutoFullModel &lt;- stepAIC(lm(mpg ~ . ,data=mtcars), 
+                         direction = &#39;both&#39;, k = log(32), trace = FALSE)
+ManualFullModel &lt;- lm(mpg ~ ., data=mtcars)
+forwardModelAIC &lt;- step(lm(mpg ~ 1, data = mtcars), 
+      direction = &quot;forward&quot;, scope = formula(ManualFullModel), k = 2, trace = 0)
+forwardModelBIC &lt;- step(lm(mpg ~ 1, data = mtcars), 
+      direction = &quot;forward&quot;, scope = formula(ManualFullModel), k = log(32), trace = 0)
+backwardModelAIC &lt;- step(ManualFullModel, 
+      direction = &quot;backward&quot;, k = 2, trace = 0)
+backwardModelBIC &lt;- step(ManualFullModel, direction = &quot;backward&quot;, k = log(32), trace = 0)</code></pre>
+<p>Below are the Automated <em><code>MASS</code></em> package results:</p>
+<pre class="r"><code>AutoFullModel$anova</code></pre>
+<pre><code>## Stepwise Model Path 
+## Analysis of Deviance Table
+## 
+## Initial Model:
+## mpg ~ cyl + disp + hp + drat + wt + qsec + vs + am + gear + carb
+## 
+## Final Model:
+## mpg ~ wt + qsec + am
+## 
+## 
+##     Step Df   Deviance Resid. Df Resid. Dev      AIC
+## 1                             21   147.4944 87.02084
+## 2  - cyl  1 0.07987121        22   147.5743 83.57243
+## 3   - vs  1 0.26852280        23   147.8428 80.16486
+## 4 - carb  1 0.68546077        24   148.5283 76.84715
+## 5 - gear  1 1.56497053        25   150.0933 73.71682
+## 6 - drat  1 3.34455117        26   153.4378 70.95632
+## 7 - disp  1 6.62865369        27   160.0665 68.84398
+## 8   - hp  1 9.21946935        28   169.2859 67.17025</code></pre>
+<p>Below are <em><code>adjusted</code></em> <span class="math inline">\(R^2\)</span> results non-automated linear models fitted using <em><code>AIC</code></em> and <em><code>BIC</code></em>:</p>
+<pre class="r"><code>formulafAIC &lt;- toString(c(summary(forwardModelAIC)$call$formula))
+msg&lt;-paste(&quot;Forward AIC highest Adjusted $R^2$ value of&quot;,
+  format(summary(forwardModelAIC)$adj.r.squared),&quot;and that model is&quot;,formulafAIC,sep=&quot; &quot;)
+formulafBIC &lt;- toString(c(summary(forwardModelBIC)$call$formula))
+msg1&lt;-paste(&quot;Forward BIC highest Adjusted $R^2$ value of&quot;,
+  format(summary(forwardModelBIC)$adj.r.squared),&quot;and that model is&quot;,formulafBIC,sep=&quot; &quot;)
+formulabAIC &lt;- toString(c(summary(backwardModelAIC)$call$formula))
+msg2&lt;-paste(&quot;Backward AIC highest Adjusted $R^2$ value of&quot;,
+  format(summary(backwardModelAIC)$adj.r.squared),&quot;and that model is&quot;,formulabAIC,sep=&quot; &quot;)
+formulabBIC &lt;- toString(c(summary(backwardModelBIC)$call$formula))
+msg3&lt;-paste(&quot;Backward BIC highest Adjusted $R^2$ value of&quot;,
+  format(summary(backwardModelBIC)$adj.r.squared),&quot;and that model is&quot;,formulabBIC,sep=&quot; &quot;)
+prnt.test(c(msg,msg1,msg2,msg3))</code></pre>
+<p>Forward AIC highest Adjusted <span class="math inline">\(R^2\)</span> value of 0.8263446 and that model is mpg ~ wt + cyl + hp</p>
+<p>Forward BIC highest Adjusted <span class="math inline">\(R^2\)</span> value of 0.8185189 and that model is mpg ~ wt + cyl</p>
+<p>Backward AIC highest Adjusted <span class="math inline">\(R^2\)</span> value of 0.8335561 and that model is mpg ~ wt + qsec + am</p>
+<p>Backward BIC highest Adjusted <span class="math inline">\(R^2\)</span> value of 0.8335561 and that model is mpg ~ wt + qsec + am</p>
+<p>As you can see the non-automated linear fit best model based on the <em><code>adjusted</code></em> <span class="math inline">\(R^2\)</span>, is: . It is the same as the automated linear fit using <em><code>MASS</code></em> package.</p>
+<p>Now we go back to the pairs plot. We observe that <em><code>wt</code></em> and <em><code>am</code></em> have a negative correlation of <em><code>-69</code></em>. As a result we will have to include that interaction in our custom final model: .</p>
+</div>
+<div id="residual-analysis-and-diagnostics" class="section level2">
+<h2><strong>Residual Analysis and Diagnostics</strong></h2>
+<p>Diagnostic for Multiple Linear regression has the following items:</p>
+<ul>
+<li><em><code>How is response variable linearly related to the explanatory variable.</code></em></li>
+<li><em><code>Nearly normal residuals with mean of zero.</code></em></li>
+<li><em><code>Constant variability of residual.</code></em></li>
+<li><em><code>Independence of residuals.</code></em></li>
+</ul>
+<pre class="r"><code>customFinalModel&lt;-lm(mpg ~ wt + qsec + am + wt:am, data=mtcars)
+par(mfrow = c(2, 2))
+plot(customFinalModel)</code></pre>
+<p><img src="/blog/2016-09-20-motor-trend-regression-models_files/figure-html/Residual%20Analysis%20and%20Diagnostics-1.png" width="960" /></p>
+<ul>
+<li><em><code>Residual vs Leverage</code></em>: we observe no outliers. All cases are inside dashed line, Cook’s distance.</li>
+<li><em><code>Normal Q-Q Plot</code></em>: we observe that residual plot is nearly normal centered around 0.</li>
+<li><em><code>Scale-Location</code></em>: we observed that plots of  vs.  randomly scatter in a band with a constant width around 0 (no fan shape).</li>
+<li><em><code>Residual vs Fitted</code></em>: we observe a residual plot that has no pattern(complete random scatter).</li>
+</ul>
+<p><strong>R Code</strong></p>
+<pre class="r"><code>#Function for plotting histogram and Printing function
+plotbox &lt;- function(box.data){
+  ggplot(box.data,aes(x=factor(am),y=mpg, fill=am))+geom_boxplot()+labs(x=&quot;X (binned)&quot;)+
+  theme(axis.text.x=element_text(angle=0, vjust=0.4,hjust=0.5,face=&quot;bold&quot;,
+                                 color =&quot;black&quot;, size =rel(2)),
+        axis.title.x = element_text(size = rel(1.5),vjust= -.5),
+        axis.text.y = element_text(face=&quot;bold&quot;, color=&quot;black&quot;, size =rel(2)),
+        axis.title.y = element_text(size = rel(1.5), angle = 90,vjust=-.5),
+        strip.text.x = element_text(size=rel(2),face=&quot;bold&quot;),
+        legend.position = &quot;none&quot;, panel.grid.major = element_blank(),
+        panel.background = element_rect(fill = &quot;transparent&quot;),
+        axis.line = element_line(colour = &quot;black&quot;, size=1, linetype = &quot;solid&quot;),
+        plot.title = element_text(vjust=-8,lineheight=.8, face=&quot;bold&quot;,
+                                  color=&quot;#CD0000&quot;, size=16))+
+  scale_x_discrete(&quot;Transmission&quot;) + scale_y_continuous(&quot;Miles Per Gallon&quot;) + 
+  ggtitle(&quot;Blox Plot of MPG by Transmission Type&quot;)
+}
+prnt.test &lt;- function(x){cat(x, sep=&quot;\n\n&quot;)}</code></pre>
+</div>
