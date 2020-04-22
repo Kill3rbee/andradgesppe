@@ -21,8 +21,7 @@ output: html_document
 
 <div id="introduction" class="section level2">
 <h2><strong>Introduction</strong></h2>
-<p>In this project you will investigate the exponential distribution in R and compare it with the Central Limit Theorem. The exponential distribution can be simulated in R with rexp(n, <span class="math display">\[\lambda\]</span>) where lambda(<span class="math display">\[\lambda\]</span>) is the rate parameter. The mean of exponential distribution is 1/<span class="math display">\[\lambda\]</span> and the standard deviation is also 1/<span class="math display">\[\lambda\]</span>. Set <span class="math display">\[\lambda\]</span> = 0.2 for all of the simulations. You will investigate the distribution of averages of 40 exponentials. Note that you will need to do a thousand simulations</p>
-<p><span class="math display">\[Impact = 10.41 \times \left(1-\left(1- ConfImpact\right) \times \left(1-IntegImpact\right) \times \left(1-AvailImpact\right)\right)\]</span></p>
+<p>In this project you will investigate the exponential distribution in R and compare it with the Central Limit Theorem. The exponential distribution can be simulated in R with rexp(n, <span class="math inline">\(\lambda\)</span>) where lambda(<span class="math inline">\(\lambda\)</span>) is the rate parameter. The mean of exponential distribution is 1/<span class="math inline">\(\lambda\)</span> and the standard deviation is also 1/<span class="math inline">\(\lambda\)</span>. Set <span class="math inline">\(\lambda\)</span> = 0.2 for all of the simulations. You will investigate the distribution of averages of 40 exponentials. Note that you will need to do a thousand simulations</p>
 </div>
 <div id="loading-required-libraries" class="section level2">
 <h2><strong>Loading required libraries</strong></h2>
@@ -45,25 +44,25 @@ expSimSampleMeans &lt;- apply(expSimSample, 1, mean)</code></pre>
 </div>
 <div id="sample-mean-versus-theoretical-mean" class="section level2">
 <h2><strong>Sample Mean versus Theoretical Mean</strong></h2>
-<p>Sample mean <span class="math display">\[(\bar{X})\]</span> from the simulation sample</p>
+<p>Sample mean <span class="math inline">\((\bar{X})\)</span> from the simulation sample</p>
 <pre class="r"><code>mean(expSimSample)</code></pre>
 <pre><code>## [1] 5.031448</code></pre>
-<p>The theoretical mean <span class="math display">\[\mu\]</span> of a exponential distribution of rate <span class="math display">\[\lambda\]</span> is</p>
-<p><span class="math display">\[\mu= \frac{1}{\lambda}\]</span></p>
+<p>The theoretical mean <span class="math inline">\(\mu\)</span> of a exponential distribution of rate <span class="math inline">\(\lambda\)</span> is</p>
+<p><span class="math inline">\(\mu= \frac{1}{\lambda}\)</span></p>
 <pre class="r"><code>(mu &lt;- 1/lambda)</code></pre>
 <pre><code>## [1] 5</code></pre>
-<p>Sample mean <span class="math display">\[(\bar{X})\]</span> and the theoretical mean <span class="math display">\[\mu\]</span> are very close.</p>
+<p>Sample mean <span class="math inline">\((\bar{X})\)</span> and the theoretical mean <span class="math inline">\(\mu\)</span> are very close.</p>
 </div>
 <div id="sample-variance-versus-theoretical-variance" class="section level2">
 <h2><strong>Sample Variance versus Theoretical Variance</strong></h2>
-<p>Sample variance <span class="math display">\[s^2\]</span> from the simulation sample means</p>
+<p>Sample variance <span class="math inline">\(s^2\)</span> from the simulation sample means</p>
 <pre class="r"><code>#The var function calculates population variance
 (samplevar &lt;-var(expSimSampleMeans))</code></pre>
 <pre><code>## [1] 0.6404317</code></pre>
-<p>The theoretical standard deviation <span class="math display">\[\sigma\]</span> of a exponential distribution of rate <span class="math display">\[\lambda\]</span> is</p>
-<p><span class="math display">\[\sigma = \frac{1/\lambda}{\sqrt{n}}\]</span></p>
-<p>The theoretical variance <span class="math display">\[\sigma^2\]</span> of a exponential distribution of rate <span class="math display">\[\lambda\]</span> is</p>
-<p><span class="math display">\[\sigma^2 = (\frac{1/\lambda}{\sqrt{n}})^2\]</span></p>
+<p>The theoretical standard deviation <span class="math inline">\(\sigma\)</span> of a exponential distribution of rate <span class="math inline">\(\lambda\)</span> is</p>
+<p><span class="math inline">\(\sigma = \frac{1/\lambda}{\sqrt{n}}\)</span></p>
+<p>The theoretical variance <span class="math inline">\(\sigma^2\)</span> of a exponential distribution of rate <span class="math inline">\(\lambda\)</span> is</p>
+<p><span class="math inline">\(\sigma^2 = (\frac{1/\lambda}{\sqrt{n}})^2\)</span></p>
 <pre class="r"><code>(sd &lt;- 1/lambda/sqrt(n))
 (var &lt;- sd^2)</code></pre>
 <pre><code>## [1] 0.7905694
