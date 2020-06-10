@@ -1,6 +1,6 @@
 ---
 title: "Red Wine Quality Exploration"
-author: Domtria Simba Mutoti
+author: Domtria Simba M
 date: '2016-02-10'
 slug: red-wine-quality-exploratory-analysis
 categories: 
@@ -76,27 +76,27 @@ redwine &lt;- fread(dataWine)</code></pre>
 ##  Mean   : 800.0   Mean   : 8.32   Mean   :0.5278   Mean   :0.271  
 ##  3rd Qu.:1199.5   3rd Qu.: 9.20   3rd Qu.:0.6400   3rd Qu.:0.420  
 ##  Max.   :1599.0   Max.   :15.90   Max.   :1.5800   Max.   :1.000  
-##  residual.sugar     chlorides       free.sulfur.dioxide
-##  Min.   : 0.900   Min.   :0.01200   Min.   : 1.00      
-##  1st Qu.: 1.900   1st Qu.:0.07000   1st Qu.: 7.00      
-##  Median : 2.200   Median :0.07900   Median :14.00      
-##  Mean   : 2.539   Mean   :0.08747   Mean   :15.87      
-##  3rd Qu.: 2.600   3rd Qu.:0.09000   3rd Qu.:21.00      
-##  Max.   :15.500   Max.   :0.61100   Max.   :72.00      
-##  total.sulfur.dioxide    density             pH          sulphates     
-##  Min.   :  6.00       Min.   :0.9901   Min.   :2.740   Min.   :0.3300  
-##  1st Qu.: 22.00       1st Qu.:0.9956   1st Qu.:3.210   1st Qu.:0.5500  
-##  Median : 38.00       Median :0.9968   Median :3.310   Median :0.6200  
-##  Mean   : 46.47       Mean   :0.9967   Mean   :3.311   Mean   :0.6581  
-##  3rd Qu.: 62.00       3rd Qu.:0.9978   3rd Qu.:3.400   3rd Qu.:0.7300  
-##  Max.   :289.00       Max.   :1.0037   Max.   :4.010   Max.   :2.0000  
-##     alcohol         quality     
-##  Min.   : 8.40   Min.   :3.000  
-##  1st Qu.: 9.50   1st Qu.:5.000  
-##  Median :10.20   Median :6.000  
-##  Mean   :10.42   Mean   :5.636  
-##  3rd Qu.:11.10   3rd Qu.:6.000  
-##  Max.   :14.90   Max.   :8.000</code></pre>
+##  residual.sugar     chlorides       free.sulfur.dioxide total.sulfur.dioxide
+##  Min.   : 0.900   Min.   :0.01200   Min.   : 1.00       Min.   :  6.00      
+##  1st Qu.: 1.900   1st Qu.:0.07000   1st Qu.: 7.00       1st Qu.: 22.00      
+##  Median : 2.200   Median :0.07900   Median :14.00       Median : 38.00      
+##  Mean   : 2.539   Mean   :0.08747   Mean   :15.87       Mean   : 46.47      
+##  3rd Qu.: 2.600   3rd Qu.:0.09000   3rd Qu.:21.00       3rd Qu.: 62.00      
+##  Max.   :15.500   Max.   :0.61100   Max.   :72.00       Max.   :289.00      
+##     density             pH          sulphates         alcohol     
+##  Min.   :0.9901   Min.   :2.740   Min.   :0.3300   Min.   : 8.40  
+##  1st Qu.:0.9956   1st Qu.:3.210   1st Qu.:0.5500   1st Qu.: 9.50  
+##  Median :0.9968   Median :3.310   Median :0.6200   Median :10.20  
+##  Mean   :0.9967   Mean   :3.311   Mean   :0.6581   Mean   :10.42  
+##  3rd Qu.:0.9978   3rd Qu.:3.400   3rd Qu.:0.7300   3rd Qu.:11.10  
+##  Max.   :1.0037   Max.   :4.010   Max.   :2.0000   Max.   :14.90  
+##     quality     
+##  Min.   :3.000  
+##  1st Qu.:5.000  
+##  Median :6.000  
+##  Mean   :5.636  
+##  3rd Qu.:6.000  
+##  Max.   :8.000</code></pre>
 </div>
 <div id="observations-from-the-summary" class="section level3">
 <h3>Observations from the Summary</h3>
@@ -238,7 +238,7 @@ The median alcohol content of red wine is 10.20.</p>
 </div>
 <div id="reflection" class="section level1">
 <h1>Reflection</h1>
-<p>The red wine data set contains “1599 instances and 11 attributes of a red variant of the Portuguese”Vinho Verde&quot; wine from around 2009“<sup>[<em>1</em>]</sup>. I had no understanding of wine when I started exploring this data set. I started out by doing some research on wine making process. After reading a wine production paper by Linda Bisson. I learned that”wine quality was very much subjective&quot;<sup>[<em>2</em>]</sup>.</p>
+<p>The red wine data set contains “1599 instances and 11 attributes of a red variant of the Portuguese”Vinho Verde" wine from around 2009“<sup>[<em>1</em>]</sup>. I had no understanding of wine when I started exploring this data set. I started out by doing some research on wine making process. After reading a wine production paper by Linda Bisson. I learned that”wine quality was very much subjective"<sup>[<em>2</em>]</sup>.</p>
 <p>That information helped me focus on 11 input variables based on physicochemical tests. “Quality is an output variable based on sensory data”<sup>[<em>1</em>]</sup>. As a first step, I wanted to understand how each of these chemicals interact and correlate with each other. I understood what pH, acidity, alcohol and citric acid were. However, I did not know much about chlorides, density, sulfur dioxide and sulphates. I had to do a lot of reading and research to understand how those chemicals affect quality.</p>
 <p>At some point, as I was looking at the EDADataOptions file. I realized that there was a <a href="https://archive.ics.uci.edu/ml/datasets/Wine+Quality" target="_blank">link to a text file</a> which describes the variables and how the data was collected. That text file had descriptions of the attributes and that gave me a better understanding of the variables.</p>
 <div id="alcohol-content" class="section level4">
