@@ -11,7 +11,7 @@ In our offices or yours, we are very happy to travel to your offices to work dir
 
  **Andradge** is all about making data more accessible and reproducibly available, so as to bridge what is often called the "data gap". Data visualisation is only a small part of that, but it's the shiniest part. This site makes use of [reproducibility ratings](/reproducibility-ratings) at the top of all the blogposts to help readers identify and find the author, data and code behind the posts.
 
-Simba Mutoti <a href='../simba-m'><button type="button" class="btn btn-primary">Full Profile</button></a>
+Simba M <a href='../simba-m'><button type="button" class="btn btn-primary">Full Profile</button></a>
 
 
 <div class='row'>
