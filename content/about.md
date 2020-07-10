@@ -37,7 +37,7 @@ Simba M <a href='../simba-m'><button type="button" class="btn btn-primary">Full 
 
 <center>
 <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="smutoti"><a class="LI-simple-link" href='https://www.linkedin.com/in/smutoti?trk=profile-badge'>Simba M</a></div>
+<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="smutoti"><a class="LI-simple-link" href='https://www.linkedin.com/in/domtria-simba?trk=profile-badge'>Simba M</a></div>
 </center>
 
 </div>
